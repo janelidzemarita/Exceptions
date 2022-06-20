@@ -46,7 +46,14 @@ public class Rectangle extends Figure implements Comparable, Comparator{
 		setHeight(height);
 		setLength(length);
 		counter ++;
-		if(counter > 5) throw new LimitException("Too many objects created!");
+		if(counter > 5) throw new LimitException("Too many Rectangles created!");
+		
+		try { //task 
+			if(length * height > 10000)
+				throw new RectangleValidateException();
+		}catch(RectangleValidateException e1){
+			System.out.println("Area too large " + e1);
+		}
 	}
 	
 	public Rectangle() throws LimitException {
@@ -80,7 +87,8 @@ public class Rectangle extends Figure implements Comparable, Comparator{
 	}
 	@Override
 	protected double getArea() {
-		return this.length * this.height;
+		if(this.length * this.height > 10000 )throw new AreaTooLargeException();
+		else return this.length * this.height;
 	}
 	
 	protected static double getPerimeter (double length, double height) {

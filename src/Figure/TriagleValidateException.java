@@ -7,4 +7,8 @@ public class TriagleValidateException extends ValidateException {
 		
 	}
 
+	public TriagleValidateException() {
+		super();
+	}
+
 }

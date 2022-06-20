@@ -6,5 +6,9 @@ public class ValidateException extends Exception{
 		super(message);
 	}
 
+	public ValidateException() {
+		super();
+	}
+
 
 }

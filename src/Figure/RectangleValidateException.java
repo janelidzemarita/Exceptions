@@ -6,4 +6,8 @@ public class RectangleValidateException extends ValidateException {
 		super(message);
 	}
 
+	public RectangleValidateException() {
+		super();
+	}
+
 }
